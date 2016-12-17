@@ -1,0 +1,13 @@
+
+<div class="row row-review">
+  <div class="col-md-2">
+    <img src="https://www.bunnyholder.com/100/100/18" alt="" class="profile-review">
+  </div>
+  <div class="col-md-10">
+    <div>Posted by:<%= review.user.first_name %> </div>
+    <span class="black-text"><%= review.content %>, <%= review.created_at.strftime("%d/%m/%y") %> </span>
+  </div>
+</div>
+
+<!-- <p><%= review.content %></p>
+ -->

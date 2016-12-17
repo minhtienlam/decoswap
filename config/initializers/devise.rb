@@ -105,7 +105,7 @@ Devise.setup do |config|
   # a value less than 10 in other environments. Note that, for bcrypt (the default
   # algorithm), the cost increases exponentially with the number of stretches (e.g.
   # a value of 20 is already extremely slow: approx. 60 seconds for 1 calculation).
-  config.stretches = Rails.env.test? ? 1 : 11
+config.stretches = Rails.env.test? ? 1 : 11
 
   # Set up a pepper to generate the hashed password.
   # config.pepper = 'f0a9e174e5e9c79b879ac2981f1c2f5427664338bd871eb18d08833b210bffd508d8bfa2a88f4a910e8a009f6ee79f11c48708c520b667af98e191e2fe8a9422'
@@ -248,6 +248,12 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+  config.omniauth :facebook, ENV["FB_ID"], ENV["FB_SECRET"],
+    scope: 'email',
+    info_fields: 'email, first_name, last_name',
+    image_size: 'square',  # 50x50, guaranteed ratio
+    secure_image_url: true
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

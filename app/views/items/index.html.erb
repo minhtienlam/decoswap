@@ -1,20 +1,17 @@
-<h1 class="text-center">All the items</h1>
+<h1 class="text-center">Select Your Item</h1>
+ <%= render "filters" %>
 
-<div class="container police">
- <div class="row">
-  <% @items.each do |r| %>
-    <div class="col-xs-12 col-sm-6 col-md-3">
-      <%= link_to item_path(r) do %>
-      <%= render "card", item: r %>
-    <% end %>
-    <%= link_to 'Show', item_path(r), class: "btn btn-primary margin-top-5"%>
-    </div> -->
-<% end %>
+<div class="border-bottom-filters"> </div>
 
+<br>
+<div id= "items" class="container police margin-bottom-50px">
+  <%= render 'items/searchresult', items: @items %>
+</div>
 
- </div>
-
-
- <%= link_to 'New item', new_item_path, class: "btn btn-primary", id: "new_item_btn" %>
-
- 
+<script>
+  $(document).ready(function() {
+    $("[data-autosubmit=true]").on("change", function() {
+      return $(this).submit();
+    });
+  });
+</script>

@@ -1,0 +1,13 @@
+<% if @review.errors.any? %>
+  console.log('error')
+  $('#new_review').html("<%= j render 'reviews/form', item: @item, review: @review %>");
+<% else %>
+  console.log('nice')
+  var new_review = $("<%= j render 'reviews/show', review: @review %>").hide();
+  console.log(new_review)
+  $('#reviews-product-info').prepend(new_review);
+  new_review.slideDown();
+  $('#new_review').html("<%= j render 'reviews/form', item: @item, review: Review.new %>");
+<% end %>
+
+

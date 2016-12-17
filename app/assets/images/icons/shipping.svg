@@ -1,0 +1,33 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52.38 35.72">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #3d4853;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <title>shipping</title>
+  <g>
+    <line class="cls-1" x1="1" y1="1" x2="1" y2="29.09"/>
+    <line class="cls-1" x1="1" y1="1" x2="27.67" y2="1"/>
+    <line class="cls-1" x1="27.67" y1="1" x2="27.67" y2="29.09"/>
+    <path class="cls-1" d="M364.89,263.58a7,7,0,0,1,13,.08" transform="translate(-358.56 -234.41)"/>
+    <path class="cls-1" d="M391.62,263.58a7,7,0,0,1,13,.08" transform="translate(-358.56 -234.41)"/>
+    <line class="cls-1" x1="6.33" y1="29.17" x2="1" y2="29.17"/>
+    <line class="cls-1" x1="51.38" y1="29.17" x2="46.04" y2="29.17"/>
+    <line class="cls-1" x1="19.32" y1="29.25" x2="32.8" y2="29.25"/>
+    <line class="cls-1" x1="51.38" y1="29.17" x2="51.38" y2="22.31"/>
+    <path class="cls-1" d="M403.68,249.2s0.48-8.44-5.57-8.44H386.23" transform="translate(-358.56 -234.41)"/>
+    <path class="cls-1" d="M409.94,256.72c0-4.15-2.8-7.52-6.25-7.52" transform="translate(-358.56 -234.41)"/>
+    <line class="cls-1" x1="1" y1="22.31" x2="6.88" y2="22.31"/>
+    <line class="cls-1" x1="45.5" y1="22.31" x2="51.38" y2="22.31"/>
+    <circle class="cls-1" cx="398.11" cy="265.9" r="3.22" transform="translate(-429.98 124.98) rotate(-45)"/>
+    <circle class="cls-1" cx="371.38" cy="265.9" r="3.22" transform="translate(-437.8 106.08) rotate(-45)"/>
+    <line class="cls-1" x1="45.13" y1="14.79" x2="35.5" y2="14.79"/>
+    <line class="cls-1" x1="35.5" y1="14.79" x2="35.5" y2="6.35"/>
+  </g>
+</svg>

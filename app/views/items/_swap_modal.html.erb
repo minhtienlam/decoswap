@@ -1,0 +1,36 @@
+<div class="btn-group cart">
+	<%= link_to "Swap", "#swapModal", :class => "btn btn-lg btn-cart", "data-toggle" => "modal" %>
+</div>
+
+<div class="modal fade" id="swapModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="vertical-alignment-helper">
+		<div class="modal-dialog vertical-align-center" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<div class="container">
+						<div class="row">
+							<div class="col-xs-12 text-center">
+								<h4>You sure you want to swap this?<h4>
+								</div>
+							</div>
+						</div>
+						<div class="modal-body">
+							<div class="container">
+								<div class="row">
+									<div class="col-xs-6 text-center">
+										<%= link_to "Let me see some more", items_path(price_cents: @price_cents, to_swap: @to_swap), class: "btn btn-cart" %>
+									</div>
+									<div class="col-xs-6 text-center">
+										<%= link_to "Yes", orders_swap_path(@item, to_swap: @to_swap, price_cents: @price_cents), class: "btn btn-cart" %>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

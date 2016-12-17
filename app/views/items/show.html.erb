@@ -1,9 +1,123 @@
-<div class="card-category text-center">
-	<h2><%= @item.name %></h2>
-	<p><%= @item.category_item %></p>
-	<p><%= @item.description %></p>
-	<p><%= @item.price %></p>
-</div>
-</div>
+<!-- product page -->
 
-<%= link_to "Book", new_item_booking_path(@item), class: "btn btn-primary center" %>
+<div class= "padding-bottom">
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-md-6">
+        <h1> <strong> <%= @item.name %> </strong> </h1>
+        <%= @item.category_item %>
+      </div>
+    </div>
+    <div class="item-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div id="owl-demo" class="owl-carousel owl-theme">
+              <% @item.photos.each do |photo| %>
+
+              <div class="item card-product">
+                <%= cl_image_tag(photo.path, :class => 'img-responsive product_main_picture small') %>
+
+              </div>
+              <% end %>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <h3> <strong> Product information </strong> </h3>
+            <p><%= @item.description %></p>
+            <br>
+            <p> <strong> Size: </strong>   <%= @item.size %> </p>
+            <p> <strong> Condition: </strong>   <%= @item.condition %> </p>
+            <p> <strong> Color: </strong>   <%= @item.color %> </p>
+            <p> <strong> Materials: </strong>   <%= @item.materials %> </p>
+            <p> <strong> Designer: </strong>   <%= @item.designer %> in <%= @item.design_period %> </p>
+            <br>
+
+            <h1><%= @item.price_cents/100 %> €/month</h1>
+            <% if @to_swap %>
+              <%= render 'swap_modal'%>
+            <% else %>
+              <%= render 'add-to-cart' %>
+            <% end %>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <h2>Reviews</h2>
+              <% if current_user && current_user.customer? %>
+              <%= render 'reviews/form', item: @item, review: @review %>
+              <% end %>
+              <div id="reviews-product-info" class="pre-scrollable">
+
+                <% if current_user && current_user.customer? && @item.reviews.blank? %>
+                <p>Be the first to leave a review for <%= @item.name %> </p>
+                <%end%>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="vertical-alignment-helper">
+      <div class="modal-dialog vertical-align-center" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-1">
+                  <i class="fa fa-check conf-title tick-green" aria-hidden="true">
+                  </i>
+                </div>
+                <div class="col-xs-8 col-xs-offset-1"><h4>Your order has been placed</h4></div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-xs-6 text-center">
+                  <%= link_to "Continue Shopping", items_path, class: "btn btn-cart" %>
+                </div>
+                <div class="col-xs-6 text-center">
+                  <%= link_to "Checkout", cart_path, class: "btn btn-cart" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</div>
+<!-- End of Modal -->
+
+
+
+
+<!-- end of product page -->
+<script type="text/javascript">
+  $("#owl-demo").owlCarousel({
+
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+
+      // "singleItem:true" is a shortcut for:
+      // items : 1,
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+
+    });
+</script>

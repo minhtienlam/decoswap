@@ -1,0 +1,15 @@
+<ul class="cards">
+  <li class="cards__item">
+    <div class="card card_oos">
+      <div class="image-container-index">
+        <% if item.photos.first %>
+          <%= cl_image_tag item.photos.first.path %>
+        <% end %>
+          <div class="card-content">
+            <p class="card__title"><%= item.name %>- Out of Stock</p>
+            <p class="card__title"><%= item.price_cents/100 %>€/month </p>
+          </div>
+      </div>
+    </div>
+  </li>
+</ul>

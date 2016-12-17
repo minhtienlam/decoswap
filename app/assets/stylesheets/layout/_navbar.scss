@@ -1,15 +1,22 @@
-/* Main class */
+#logo{
+  width: 25px;
+  padding-bottom: 8px;
+}
 .navbar-wagon {
-  box-shadow: 0 1px 5px 0 rgba(0,0,0,0.07),0 1px 0 0 rgba(0,0,0,0.03);
-  background: white;
+  background: #282828;
   transition: all 0.3s ease;
   display: flex;
-  height: 70px;
-  padding: 0px 30px;
+  height: 62px;
+  padding: 0px 60px;
   align-items: center;
   justify-content: space-between;
 }
-
+.navbar-wagon  a {
+  z-index: 1;
+  &:hover {
+    color: $link-hover-color;
+  }
+}
 /* Optional class to fix the navbar on top */
 .navbar-wagon-fixed {
   position: fixed;
@@ -17,11 +24,19 @@
   top: 0px;
   z-index: 1;
   width: 100%;
+  margin-bottom: 50px;
+  margin-top: 30px;
+  background: transparent;
+
 }
 
 /* Navbar logo */
+.navbar-wagon-brand {
+  margin-right: 30px;
+}
+
 .navbar-wagon-brand img {
-  width: 50px;
+  width: 200px;
 }
 
 /* Navbar right section (with form, links, button) */
@@ -33,18 +48,18 @@
 
 /* Navbar item */
 .navbar-wagon-item {
-  flex: 0 1 auto;
+  flex: 0 0 auto;
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 25px;
 }
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 14px;
+  color: white;
+  font-size: 17px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #469AE0;
   text-decoration: none;
 }
 
@@ -57,12 +72,12 @@
   background-color: #D23333;
   color: white;
   font-size: 14px;
-  border: 2px solid #D23333;
 }
 .navbar-wagon-button:hover {
   color: white;
-  background: #D23333;
-  border-color: #ac2626;
+  background: #469AE0;
+  text-decoration: none;
+
 }
 
 /* Navbar search form */
@@ -129,3 +144,97 @@
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
 }
+
+// ---------------------------------------------------------
+/* expandable_searchbar */
+
+#barsearch{
+width: 400px;
+}
+
+.align-right{
+  text-align: right;
+}
+#expandable_searchbar input[type=text] {
+  width: 5px;
+  padding-left: 10px;
+  color: transparent;
+  cursor: pointer;
+}
+#expandable_searchbar input[type=text]:hover {
+  background-color: transparent;
+}
+#expandable_searchbar input[type=text]:focus {
+  width: 150px;
+  padding-left: 32px;
+  color: #000;
+  background-color: transparent;
+  cursor: auto;
+}
+#expandable_searchbar input:-moz-placeholder {
+  color: transparent;
+}
+#expandable_searchbar input::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input {
+  outline: none;
+}
+input[type=texto] {
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  font-family: inherit;
+  font-size: 100%;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+  display: none;
+}
+
+
+input[type=text] {
+  background: transparent no-repeat 9px center;
+  border: solid 1px #fff;
+  padding: 6px 80px 6px 16px;
+  width: -1px;
+
+  -webkit-border-radius: 10em;
+  -moz-border-radius: 10em;
+  border-radius: 10em;
+
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+}
+input[type=text]:focus {
+  width: 100%;
+  background-color: #fff;
+  border-color: #fff;
+
+  -webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+  -moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+  box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+
+
+input:-moz-placeholder {
+  color: #999;
+}
+input::-webkit-input-placeholder {
+  color: #999;
+}
+
+.login_button{
+    border: 1px solid;
+    border-radius: 20px;
+    color: white;
+}
+
+.register_button{
+    border: 1px solid;
+    border-radius: 20px;
+    background-color: #469ae0 !important;
+    color: white !important;
+}
+

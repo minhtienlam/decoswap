@@ -1,0 +1,68 @@
+<h1 class="page-header text-center"> Welcome Home </h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="row placeholders">
+        <div class="col-sm-6 placeholder">
+          <i class="fa fa-eur" aria-hidden="true"></i>
+          <h4>Total Billed</h4>
+          <span class="text-muted"><%= @sum_of_prices %> €/month</span>
+        </div>
+        <div class="col-xs-6 col-sm-6 placeholder">
+          <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          <h4>Number of items</h4>
+          <span class="text-muted"><%= @sum_of_items %></span>
+        </div>
+      </div>
+      <div class="profile-tabs">
+        <%= link_to 'Dashboard', profile_path, class: 'profile-tab active' %>
+        <%= link_to 'Historic', historic_profile_path, class: 'profile-tab' %>
+        <%= link_to 'Account Settings', account_settings_profile_path, class: 'profile-tab' %>
+      </div>
+    </div>
+    <div class="container police">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="container">
+            <div class="row text-center title">
+              <div class="col-xs-3"><h4>Product</h4></div>
+              <div class="col-xs-3"><h4>Name</h4></div>
+              <div class="col-xs-3"><h4>Subcription</h4></div>
+              <div class="col-xs-3"><h4>Action</h4></div>
+            </div>
+            <% @user.bookings.each do |booking| %>
+            <% if booking.item.status == "Rent" %>
+            <div class="row text-center shopping-cart-margin shopping-cart-padding shopping-cart-border">
+              <div class="col-xs-3">
+                <div class="shopping-cart-image shopping-cart-center flex-center">
+                  <%= cl_image_tag(booking.item.photos.first.path) %>
+                </div>
+              </div>
+              <div class="col-xs-3">
+                <div class="flex-center">
+                  <h4><%= booking.item.name %></h4>
+                </div>
+              </div>
+              <div class="col-xs-3">
+                <div class="flex-center"><h4><%= humanized_money(booking.item.price_cents/100) %>€</h4></div>
+              </div>
+              <div class="col-xs-3">
+                <div class="flex-center">
+                  <p>
+                  <%= link_to "See", item_path(booking.item), class: "btn btn-primary center text-right" %>
+                  <%= link_to "Swap", items_path(price_cents: booking.item.price_cents, to_swap: booking.item.id), class: "btn btn-primary center text-right" %>
+                   <%= link_to "Buy", profile_booking_path(booking), method: :delete, class: "btn btn-primary center text-right" %> </p>
+                   </div>
+                   </div>
+             </div>
+
+                   <% end %>
+             <% end %>
+           </div>
+           <div class="padding-bottom-300" ></div>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>

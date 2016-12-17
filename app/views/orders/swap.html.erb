@@ -1,0 +1,57 @@
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<h1>Swapping time</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12 col-md-4">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front">
+						<%= render "items/card", item: @item_return %>
+					</div>
+					<div class="back">
+						<%= render "items/card", item: @item_booked %>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-4 text-center swap-margin-top">
+			<h3>Pick a delivery date</h3>
+			<div class="form-group">
+			    <div class='input-group date' id='datetimepicker1'>
+			        <input type='text' class="form-control" />
+			        <span class="input-group-addon">
+			            <span class="glyphicon glyphicon-calendar"></span>
+			        </span>
+			    </div>
+			</div>
+			<div class="btn btn-cart" id="swap-btn">Swap</div>
+		</div>
+		<div class="col-xs-12 col-md-4">
+			<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
+				<div class="flipper">
+					<div class="front">
+						<%= render "items/card", item: @item_booked %>
+					</div>
+					<div class="back">
+						<%= render "items/card", item: @item_return %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row swap-margin-botton swap-display-hidden" id="confirmation-tick">
+		<div class="col-xs-1 col-xs-offset-3">
+			<i class="fa fa-check conf-title tick-green" aria-hidden="true">
+				</i>
+		</div>
+		<div class="col-xs-8">
+			<div class="row"><h3>Thank you for trusting DecoSwap</h3></div>
+			<div class="row"><h4>Your new item will be delivered on 25/12/2016</h4></div>
+		</div>
+	</div>
+
+</div>

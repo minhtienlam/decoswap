@@ -1,0 +1,26 @@
+<div class="container police">
+	<div class="row checkbox-margin">
+  <div class="border-bottom-filters" >
+		<%= simple_form_for :item, url:items_path, html: {method: :get, class: "form-inline text-center"}, data: {autosubmit: true}, remote: true do |f| %>
+		<div class="col-xs-3">
+			<h4>Categories</h4>
+			<%= f.collection_check_boxes :category_item, category_collection, :last, :first, { item_wrapper_class: "collection_button_wrapper", collection_wrapper_class: "folded tags_collection", checked: params["category_item"], include_hidden: false }, name: "category_item[]"%>
+		</div>
+
+
+		<div class="col-xs-3">
+			<h4>Prices</h4>
+			<%= f.collection_check_boxes :price_cents, price_collection, :last, :first, { item_wrapper_class: "collection_button_wrapper", collection_wrapper_class: "folded tags_collection", checked: params["price_cents"], include_hidden: false }, name: "price_cents[]"%>
+		</div>
+		<div class="col-xs-3">
+			<h4>Colors</h4>
+			<%= f.collection_check_boxes :color, colors_collection, :last, :first, { item_wrapper_class: "collection_button_wrapper", collection_wrapper_class: "folded tags_collection", checked: params["color"], include_hidden: false }, name: "color[]"%>
+		</div>
+		<div class="col-xs-3">
+			<h4>Materials</h4>
+			<%= f.collection_check_boxes :materials, materials_collection, :last, :first, { item_wrapper_class: "collection_button_wrapper", collection_wrapper_class: "folded tags_collection", checked: params["materials"], include_hidden: false }, name: "materials[]"%>
+		</div>
+	</div>
+	<% end %>
+</div>
+</div>

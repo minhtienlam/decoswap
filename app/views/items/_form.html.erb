@@ -1,15 +1,21 @@
 <%= simple_form_for(@item) do |f| %>
-  <div class="form-inputs">
-      <%= f.input :name %>
-      <%= f.input :category_item %>
-      <%= f.input :size %>
-      <%= f.input :image_url %>
-      <%= f.input :description %>
-
-  </div>
-    <div class="form-actions">
-      <%= f.button :submit %>
-    </div>
-  <% end %>
+<div class="form-inputs">
+  <%= f.input :name %>
+  <%= f.input :category_item, collection: category_collection, as: :select%>
+  <%= f.input :size %>
+  <%= f.input :photos, as: :attachinary %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.input :status %>
+  <%= f.input :color %>
+  <%= f.input :condition %>
+  <%= f.input :designer %>
+  <%= f.input :design_period %>
+  <%= f.input :materials %>
+</div>
+<div class="form-actions">
+  <%= f.button :submit %>
+</div>
+<% end %>
 
 

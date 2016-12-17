@@ -1,0 +1,27 @@
+            <% if current_user.try(:customer?) %>
+            <div class="btn-group cart">
+              <%= link_to "Add to cart", "#myModal", :class => "btn btn-lg btn-cart", "data-toggle" => "modal", id: "add_to_cart" %>
+              <!-- <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Add to cart</button> -->
+            </div>
+            <%= simple_form_for @cart do |f| %>
+            <div class="form-inputs">
+              <%= f.input :id, as: :hidden, input_html: {value: @item.id} %>
+            </div>
+
+            <div class="form-actions">
+              <%#= f.submit 'Add to Cart' %>
+            </div>
+            <% end %>
+            <% else %>
+            <div class="btn-group cart">
+              <%= link_to "Add to cart", "#loginModal", class: "btn btn-lg btn-primary", "data-toggle" => "modal", id: "add_to_cart" %>
+            </div>
+
+            <% end %>
+
+            <div class="btn-group wishlist">
+
+              <% if current_user.try(:professional?) %>
+              <%= link_to "Edit", edit_dashboard_item_path(@item), class: "btn btn-danger" %>
+              <% end %>
+            </div>

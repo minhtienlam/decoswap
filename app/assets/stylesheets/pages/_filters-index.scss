@@ -1,0 +1,105 @@
+// Add some space between the default radio button and the label
+.collection_radio_buttons,
+.collection_check_boxes {
+  margin-left: 5px;
+}
+
+.collection_li_wrapper {
+  > label {
+    margin-bottom: 0;
+  }
+}
+
+.checkbox-margin {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+// By default collection items are rendered with a class .collection_radio_buttons
+// or .collection_check_boxes. To change the default styling to buttons,
+// just add on the builder item_wrapper_class: "collection_button_wrapper"
+
+.collection_button_wrapper,
+.collection_radio_wrapper {
+  > label {
+    margin-bottom: 0;
+  }
+  input {
+    display: none;
+  }
+  .collection_radio_buttons,
+  .collection_check_boxes, {
+    background: white;
+    font-weight: 300;
+    border: 1px solid $gray-light;
+    padding: 6px 10px;
+    cursor: pointer;
+  }
+  input:checked + .collection_radio_buttons,
+  input:checked + .collection_check_boxes {
+    background: $gray-light;
+    color: white;
+  }
+
+// Checkbox specific
+.collection_check_boxes {
+  margin: 0 5px 5px 0;
+  border-radius: $border-radius-base;
+}
+
+.collection_radio_buttons {
+  margin: 0;
+}
+
+// Radio buttons specific
+&:first-child .collection_radio_buttons {
+  @include border-left-radius($border-radius-base);
+}
+&:last-child .collection_radio_buttons {
+  @include border-right-radius($border-radius-base);
+}
++ .collection_button_wrapper {
+  margin-left: -1px;
+}
+}
+
+
+
+
+.collection_button_wrapper {
+  label {
+    min-width: 98px;
+  }
+}
+#item_color_beige:hover + label{
+  border-color: #D1BEB7;
+  border-width: 1.7px ;
+}
+
+#item_color_white:hover + label{
+  border-color: $gray-lighter;
+  border-width: 1.7px ;
+}
+
+#item_color_black:hover + label{
+  border-color: $black;
+  border-width: 1.7px ;
+}
+
+#item_color_brown:hover + label{
+  border-color: #8B4513;
+  border-width: 1.7px ;
+}
+#item_color_gray:hover + label{
+  border-color: $gray;
+  border-width: 1.7px ;
+}
+#item_color_warm:hover + label{
+  border-color: #E04D08;
+  border-width: 1.7px ;
+}
+#item_color_cold:hover + label{
+  border-color: #45AFE0;
+  border-width: 1.7px ;
+}
+

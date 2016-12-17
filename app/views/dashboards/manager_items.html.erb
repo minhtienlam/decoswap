@@ -1,0 +1,81 @@
+
+<h1 class="page- text-center">Check out your Bookings</h1>
+<div class="container-fluid">
+      <div class="row">
+       <div class="col-md-12">
+
+            <div class="row placeholders">
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <i class="fa fa-eur" aria-hidden="true"></i>
+                <h4>Income</h4>
+                <span class="text-muted"><%= @sum_of_price_pro %></span>
+              </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                <h4>Customers</h4>
+                <span class="text-muted"><%= @sum_of_customers %></span>
+              </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <h4>Orders</h4>
+                <span class="text-muted"><%= @sum_of_orders %></span>
+              </div>
+              <div class="col-xs-6 col-sm-3 placeholder">
+                <i class="fa fa-pie-chart" aria-hidden="true"></i>
+                <h4>Stats</h4>
+                <span class="text-muted">+34%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="profile-tabs">
+          <a class="profile-tab " <%= link_to 'Dashboard', dashboard_path %></a>
+          <a class="profile-tab active" <%= link_to 'Manage Items', manager_items_dashboard_path %> </a>
+
+           <a class="profile-tab" <%= link_to 'Account Settings', account_settings_dashboard_path %> </a>
+
+          <a class="profile-tab" <%= link_to 'Stats', stats_dashboard_path %> </a>
+        </div>
+
+        <div id="relative_div">
+
+          <div class="text-justify-button">
+            <h2 class="sub-header">Your Items</h2>
+          <%= link_to 'Add New item', new_item_path, class: "btn btn-lg btn-primary" %>
+          </div>
+
+
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th>#id</th>
+                    <th>Item</th>
+                    <th>Customer</th>
+                    <th>Status</th>
+                    <th>Price</th>
+                    <th>Product Page</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @user.items.each do |item| %>
+                  <% if item.status == "Rent" || "Free" || "free" %>
+                  <tr>
+                    <td><%= item.id %></td>
+                    <td><%= item.name %></td>
+                    <td><%= item.size %></td>
+                    <td><%= item.status %></td>
+                    <td><%= item.price %></td>
+                    <td> <p> <%= link_to 'See', item_path(item) %>  <%= link_to 'Edit', edit_dashboard_item_path(item) %> </td> </p>
+                  </tr>
+                  <% end %>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

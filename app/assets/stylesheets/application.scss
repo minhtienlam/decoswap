@@ -8,9 +8,25 @@
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
+@import "bootstrap-datetimepicker";
+
+
 // Your CSS
 @import "layout/index";
 @import "components/index";
 @import "components/banner";
+@import "components/button_cart";
+@import "components/modal";
 @import "pages/index";
+@import "pages/home";
+@import "pages/swap";
+@import "pages/filters-index";
+@import "pages/dashboard";
+@import "pages/product_page";
+@import "pages/shopping_cart";
+@import "pages/checkout";
+@import "pages/confirmation";
 @import "vendor/index";
+@import "vendor/owl.theme";
+@import "vendor/owl.carousel";
+@import "vendor/owl.transitions";

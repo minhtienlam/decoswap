@@ -1,0 +1,20 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 59.33 59.33">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #3d4853;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <title>product</title>
+  <g>
+    <polyline class="cls-1" points="41.11 7.57 30.36 5.24 1 34.61 12.86 46.47 24.73 58.33 54.09 28.97 49.86 9.47 41.11 7.57"/>
+    <circle class="cls-1" cx="155.83" cy="238.71" r="4" transform="translate(-236.32 -41.93) rotate(-45)"/>
+    <path class="cls-1" d="M154.73,229.7a11.93,11.93,0,0,1,2.36-3.32c3.84-3.84,9.42-4.47,12.48-1.41s2.43,8.65-1.41,12.48l-0.48.45c-3.71,3.34-9,3.63-12,.95" transform="translate(-113.17 -222.03)"/>
+    <path class="cls-1" d="M144.11,250.43a6.48,6.48,0,0,1,5.55,1.58c1.53,1.53,1.18,4.38-.79,6.35-3.48,3.32-11.76,3-15.45,2.76-0.25-3.69-.56-12,2.76-15.45,2-2,4.81-2.32,6.35-.79A6.48,6.48,0,0,1,144.11,250.43Z" transform="translate(-113.17 -222.03)"/>
+  </g>
+</svg>

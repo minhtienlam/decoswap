@@ -16,3 +16,11 @@
 <%= f.input :materials %>
 <%= f.input :status %>
 <%= f.input :price %>
+
+
+<!-- <div class="card"
+  style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path @product.photo, height: 300, width: 400, crop: :fill %>')"> -->
+
+
+<%= f.collection_check_boxes :category_item, category_collection, :first, :last, name: "category_item[]", item_wrapper_class: "col-md-3" %>
+    <% end %>

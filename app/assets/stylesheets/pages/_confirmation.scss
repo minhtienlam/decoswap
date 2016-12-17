@@ -1,0 +1,64 @@
+.conf-margin {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+.conf-border {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	border: 1px solid black;
+}
+.conf-border-right {
+	border-right: 1px dotted black;
+}
+.conf-border-bottom {
+	border-bottom: 1px solid black;
+}
+.conf-padd-left {
+	padding-left: 50px;
+}
+.conf-margin-bott {
+	margin-bottom: 20px;
+}
+.conf-margin-top {
+	margin-top: 30px;
+}
+.conf-margin-left {
+	margin-left: 50px;
+}
+.conf-margin-left-small {
+	margin-left: 45px;
+}
+.conf-margin-left-small {
+	margin-left: 30px;
+}
+.conf-margin-title {
+	margin-top: 40px;
+	margin-bottom: 20px;
+}
+.conf-image {
+	max-width: 100px;
+	height: 100px;
+	overflow: hidden;
+//	align-items: center;
+//	display: flex;
+	img {
+		width: 100%;
+}
+}
+.conf-title {
+	font-size: 50px;
+	font-weight: bold;
+}
+.conf-bold {
+	font-weight: bold;
+}
+.conf-btn {
+	margin-left: 65px;
+}
+.tick-green {
+	color: #759E2D;
+	margin-right: -50px;
+}
+.conf-phone-margin-left {
+	margin-left: 55px;
+}

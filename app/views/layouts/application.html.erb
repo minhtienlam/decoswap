@@ -4,15 +4,32 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <%= favicon_link_tag 'icons/favicon.ico' %>
     <title>DecoSwap</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
+
+
+    <meta property=”og:title” content=”DecoSwap” />
+    <meta property=”og:type” content=”website” />
+    <meta property=”og:url” content=”https://decoswap.herokuapp.com/” />
+    <meta property=”og:image” content=”http://res.cloudinary.com/dhrqyxgzp/image/upload/v1481797003/2nd%20seed/vignette.png” />
+    <meta property=”og:description” content=”Furnitures as a service” />
+
+
   </head>
-  <body>
+  <body class="<%= controller_name %>  sticky-site" >
+
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
     <%= javascript_include_tag 'application' %>
+    <div class="sticky-content">
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <%= cloudinary_js_config %>
   </body>
 </html>

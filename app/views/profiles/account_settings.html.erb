@@ -1,0 +1,29 @@
+<h1 class="page-header text-center">Welcome Home </h1>
+
+<div class="container">
+  <div class="row">
+    <div class="">
+      <div class="col-sm-12">
+
+        <div class="row placeholders">
+          <div class="col-sm-6 placeholder">
+            <i class="fa fa-eur" aria-hidden="true"></i>
+            <h4>Total Billed</h4>
+            <span class="text-muted"><%= @sum_of_prices %> €/month</span>
+          </div>
+          <div class="col-xs-6 col-sm-6 placeholder">
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+            <h4>Number of items</h4>
+            <span class="text-muted"><%= @sum_of_items %></span>
+          </div>
+        </div>
+
+        <div class="profile-tabs">
+        <%= link_to 'Dashboard', profile_path, class: 'profile-tab' %>
+        <%= link_to 'Historic', historic_profile_path, class: 'profile-tab' %>
+        <%= link_to 'Account Settings', account_settings_profile_path, class: 'profile-tab active' %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

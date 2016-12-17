@@ -1,0 +1,15 @@
+<div class="row">
+  <% items.each do |item| %>
+  <% if item.status == "Free" || "Rent" || "rent" %>
+    <div class="col-xs-12 col-sm-6 col-md-3 padding-horizontal-7">
+    <%= link_to item_path(item, to_swap: @to_swap, price_cents: @price_cents), class:"no-text-decoration" do %>
+    <% if item.status == "Free" %>
+      <%= render "card", item: item %>
+    <% elsif item.status == "Rent" || "rent" %>
+      <%= render "card_oos", item: item %>
+    <% end %>
+    <% end %>
+  </div>
+  <% end %>
+  <% end %>
+</div>
